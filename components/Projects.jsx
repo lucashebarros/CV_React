@@ -25,7 +25,7 @@ export default function Projects() {
     {
       title: "Gestão de Estoque",
       desc: "Sistema dinâmico para controle de inventário e análise de dados de reposição.",
-      link: "https://estoqueprojectpy.streamlit.app",
+      link: "https://estoque-port.vercel.app",
       tags: ["Python", "Streamlit", "Análise de Dados"]
     }
   ]
