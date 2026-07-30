@@ -1,3 +1,4 @@
+import { LanguageProvider } from '@/context/LanguageContext'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
@@ -8,6 +9,7 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
+  <LanguageProvider>
     <main className="bg-slate-950 overflow-hidden">
       <Header />
       <Hero />
@@ -17,5 +19,6 @@ export default function Home() {
       <Education />
       <Footer />
     </main>
+  </LanguageProvider>
   )
 }
