@@ -1,8 +1,11 @@
 "use client"
 import { motion } from 'framer-motion'
 import { FaLinkedin, FaGithub, FaInstagram, FaViber } from 'react-icons/fa'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Hero() {
+  const { t } = useLanguage()
+  
   return (
     <section 
       style={{ backgroundColor: '#020617' }} 
@@ -81,7 +84,7 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* 5. Conteúdo Central */}
+      {/* 5. Conteúdo Central (Agora totalmente traduzido pelo dicionário) */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -89,15 +92,15 @@ export default function Hero() {
         className="relative z-10 font-dosis mt-12 px-6 max-w-4xl"
       >
         <span className="block text-xl md:text-2xl text-slate-300 mb-3 tracking-wide font-light">
-          Transformando dados em insights poderosos para
+          {t.hero.prefix}
         </span>
         
         <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-[#6c63ff] via-purple-400 to-[#ff4c4c] bg-clip-text text-transparent drop-shadow-2xl mb-6 tracking-tight">
-          o futuro
+          {t.hero.title}
         </h1>
 
         <p className="text-lg md:text-2xl text-slate-300 font-light tracking-wide">
-          Especialista em Business Intelligence
+          {t.hero.subtitle}
         </p>
       </motion.div>
     </section>
