@@ -1,7 +1,10 @@
 "use client"
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function About() {
+  const { t } = useLanguage()
+
   return (
     <section id="about" className="py-24 bg-slate-950 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 text-center">
@@ -13,7 +16,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold text-white mb-8 font-dosis"
         >
-          Sobre Mim
+          {t.about.title}
         </motion.h2>
 
         <motion.div 
@@ -25,7 +28,7 @@ export default function About() {
         >
           <div className="text-6xl text-[#6c63ff] absolute -top-6 left-6 opacity-40 font-serif">"</div>
           <p className="text-xl md:text-2xl italic text-slate-300 mb-4 relative z-10 font-light">
-            Nosso verdadeiro trabalho com dados é entender melhor as histórias humanas, para que possamos servir melhor às pessoas.
+            {t.about.quote}
           </p>
           <p className="text-slate-500 font-semibold uppercase tracking-widest text-sm">— Daniel Burstein</p>
         </motion.div>
@@ -37,12 +40,8 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-left space-y-6 text-lg text-slate-400 leading-relaxed font-light"
         >
-          <p>
-            Olá, sou <span className="font-semibold text-[#6c63ff]">Lucas Henrique de Barros</span>, especialista em Business Intelligence e arquitetura de dados. Ao longo da minha carreira, desenvolvi soluções estratégicas para otimização de processos logísticos, financeiros e de vendas.
-          </p>
-          <p>
-            Com experiência prática em automação de fluxos com Python, modelagem em SQL e implementação de dashboards dinâmicos no Power BI, meu foco é transformar dados complexos em insights claros que guiam a alta gestão rumo às melhores decisões.
-          </p>
+          <p>{t.about.p1}</p>
+          <p>{t.about.p2}</p>
         </motion.div>
       </div>
     </section>
