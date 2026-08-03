@@ -26,7 +26,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="https://github.com/Lucshb" target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-[#6c63ff] transition-colors">
+              <a href="https://github.com/lucash.barros" target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-[#6c63ff] transition-colors">
                 <FaGithub className="text-lg" /> GitHub
               </a>
             </li>
