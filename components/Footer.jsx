@@ -1,24 +1,24 @@
 "use client"
 import { FaInstagram, FaLinkedin, FaGithub, FaPhone, FaEnvelope } from 'react-icons/fa'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const { t } = useLanguage()
 
   return (
-    <footer id="contato" className="bg-[#1a1a2e] text-slate-300 py-16 border-t border-white/10">
+    <footer id="contato" className="bg-[#0a0f1c] text-slate-300 py-16 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
         
-        {/* Logo / Direitos */}
         <div className="flex flex-col items-center md:items-start justify-center">
           <img src="/Picture4.png" alt="Logo Lucas BI" className="h-12 opacity-80 mb-4 grayscale brightness-200" />
           <p className="text-sm text-slate-500 font-light">
-            Transformando dados complexos em insights práticos.
+            {t.footer.tagline}
           </p>
         </div>
 
-        {/* Redes Sociais */}
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-[#6c63ff] text-xl font-bold font-dosis mb-6">Conecte-se</h3>
+          <h3 className="text-[#6c63ff] text-xl font-bold font-dosis mb-6">{t.footer.connect}</h3>
           <ul className="space-y-4">
             <li>
               <a href="https://www.linkedin.com/in/lucas-h-barros/" target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-[#6c63ff] transition-colors">
@@ -38,9 +38,8 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contato */}
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-[#ff4c4c] text-xl font-bold font-dosis mb-6">Contato</h3>
+          <h3 className="text-[#ff4c4c] text-xl font-bold font-dosis mb-6">{t.footer.contact}</h3>
           <ul className="space-y-4">
             <li className="flex items-center gap-3">
               <FaPhone className="text-lg text-[#ff4c4c]" /> 
@@ -56,7 +55,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 mt-16 pt-8 border-t border-white/10 text-center text-sm text-slate-500 font-light tracking-wide">
-        &copy; {currentYear} Lucas Henrique de Barros. Todos os direitos reservados.
+        &copy; {currentYear} Lucas Henrique de Barros. {t.footer.rights}
       </div>
     </footer>
   )
