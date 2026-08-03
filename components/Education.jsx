@@ -1,8 +1,11 @@
 "use client"
 import { motion } from 'framer-motion'
 import { FiCheckCircle, FiBookOpen } from 'react-icons/fi'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Education() {
+  const { t } = useLanguage()
+
   const educations = [
     { inst: "Anhanguera Educacional", curso: "Arquitetura de Dados, TI", ano: "Fev 2023 - Jul 2025" },
     { inst: "EBAC", curso: "Especialização, Analista de Dados", ano: "Fev 2023" },
@@ -11,9 +14,9 @@ export default function Education() {
   ]
 
   const diferenciais = [
-    { title: "Metodologias Ágeis", desc: "Planejamentos otimizados que dinamizam o fluxo de produção com interações constantes." },
-    { title: "Consultoria em BI", desc: "Criação de dashboards e relatórios analíticos sob medida para otimização de performance." },
-    { title: "Interfaces de Alta Fidelidade", desc: "Implementação focada na melhor experiência do usuário e na clareza dos dados." },
+    { title: t.education.diff1Title, desc: t.education.diff1Desc },
+    { title: t.education.diff2Title, desc: t.education.diff2Desc },
+    { title: t.education.diff3Title, desc: t.education.diff3Desc },
   ]
 
   return (
@@ -29,7 +32,7 @@ export default function Education() {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-3xl font-bold text-white mb-8 font-dosis flex items-center gap-3">
-              <FiBookOpen className="text-[#6c63ff]" /> Formação Acadêmica
+              <FiBookOpen className="text-[#6c63ff]" /> {t.education.academicTitle}
             </h3>
             <div className="space-y-6 relative border-l-2 border-slate-800 ml-4 pl-6">
               {educations.map((item, i) => (
@@ -51,7 +54,7 @@ export default function Education() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="text-3xl font-bold text-white mb-8 font-dosis flex items-center gap-3">
-              <FiCheckCircle className="text-[#ff4c4c]" /> Diferenciais
+              <FiCheckCircle className="text-[#ff4c4c]" /> {t.education.diffTitle}
             </h3>
             <div className="space-y-6">
               {diferenciais.map((item, i) => (
