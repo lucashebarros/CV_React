@@ -1,14 +1,17 @@
 "use client"
 import { motion } from 'framer-motion'
 import { FaChartBar, FaDatabase, FaCloud, FaCode, FaLayerGroup } from 'react-icons/fa'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Skills() {
+  const { t } = useLanguage()
+
   const skills = [
-    { icon: <FaChartBar />, title: "Business Intelligence", desc: "Power BI, QlikSense, Google Looker" },
-    { icon: <FaDatabase />, title: "Bancos de Dados", desc: "SQL Server, MySQL, Postgres, Oracle" },
-    { icon: <FaCloud />, title: "Cloud", desc: "Azure, AWS, Google Cloud" },
-    { icon: <FaCode />, title: "Programação", desc: "Python, Next.js, HTML, CSS" },
-    { icon: <FaLayerGroup />, title: "Data Warehouse", desc: "Desenvolvimento e Manutenção de Data Lakes" },
+    { icon: <FaChartBar />, title: t.skills.bi, desc: "Power BI, QlikSense, Google Looker" },
+    { icon: <FaDatabase />, title: t.skills.db, desc: "SQL Server, MySQL, Postgres, Oracle" },
+    { icon: <FaCloud />, title: t.skills.cloud, desc: "Azure, AWS, Google Cloud" },
+    { icon: <FaCode />, title: t.skills.prog, desc: "Python, Next.js, HTML, CSS" },
+    { icon: <FaLayerGroup />, title: t.skills.dw, desc: t.skills.dwDesc },
   ]
 
   const container = {
@@ -31,7 +34,7 @@ export default function Skills() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-center text-white mb-16 font-dosis uppercase tracking-wider"
         >
-          Minhas Skills e <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6c63ff] to-[#ff4c4c]">Power Up's</span>
+          {t.skills.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6c63ff] to-[#ff4c4c]">{t.skills.highlight}</span>
         </motion.h2>
 
         <motion.div 
