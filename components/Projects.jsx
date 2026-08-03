@@ -1,31 +1,34 @@
 "use client"
 import { motion } from 'framer-motion'
 import { FiExternalLink } from 'react-icons/fi'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Projects() {
+  const { t } = useLanguage()
+
   const projects = [
     {
-      title: "PrivaSense (Micro-SaaS)",
-      desc: "Plataforma para discovery automatizado de dados e ferramentas de adequação à LGPD para empresas.",
+      title: t.projects.p1Title,
+      desc: t.projects.p1Desc,
       link: "#",
       tags: ["Arquitetura de Dados", "Automação", "Compliance"]
     },
     {
-      title: "Dashboard de Vendas",
-      desc: "Visualização interativa e acompanhamento de KPIs estratégicos de faturamento.",
+      title: t.projects.p2Title,
+      desc: t.projects.p2Desc,
       link: "https://app.powerbi.com/view?r=eyJrIjoiYzQ5YTgzYWMtYjJkZi00N2U3LWIwNTYtNGYwOWI4NzIxYWY1IiwidCI6ImNjMmE5NWVhLTMzNWMtNDQzYi04NDQzLWU5YWQzM2ZmOWUwNCJ9",
       tags: ["Power BI", "DAX", "Modelagem"]
     },
     {
-      title: "Rastreamento Logístico",
-      desc: "Monitoramento de veículos e eficiência operacional de frota em tempo real.",
+      title: t.projects.p3Title,
+      desc: t.projects.p3Desc,
       link: "https://monitamento-veiculo.vercel.app",
       tags: ["Logística", "APIs", "Tempo Real"]
     },
     {
-      title: "Gestão de Estoque",
-      desc: "Sistema dinâmico para controle de inventário e análise de dados de reposição.",
-      link: "https://estoque-port.vercel.app",
+      title: t.projects.p4Title,
+      desc: t.projects.p4Desc,
+      link: "https://estoqueprojectpy.streamlit.app",
       tags: ["Python", "Streamlit", "Análise de Dados"]
     }
   ]
@@ -40,7 +43,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-center text-white mb-16 font-dosis"
         >
-          Meus <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6c63ff] to-[#ff4c4c]">Projetos</span>
+          {t.projects.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6c63ff] to-[#ff4c4c]">{t.projects.highlight}</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
