@@ -28,7 +28,7 @@ export default function Projects() {
     {
       title: t.projects.p4Title,
       desc: t.projects.p4Desc,
-      link: "https://estoqueprojectpy.streamlit.app",
+      link: "https://estoque-port.vercel.app",
       tags: ["Python", "Streamlit", "Análise de Dados"]
     }
   ]
