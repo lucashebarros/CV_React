@@ -107,7 +107,15 @@ export default function Hero() {
           className="flex gap-20 items-center w-max px-10"
         >
           {/* Nós duplicamos o array para que o loop seja infinito e sem cortes */}
-
+          {[...companyLogos, ...companyLogos, ...companyLogos].map((logo, index) => (
+            <img 
+              key={index} 
+              src={logo} 
+              alt="Empresa" 
+              // A mágica do CSS: grayscale tira a cor, brightness-200 deixa branco, opacity-40 deixa sutil
+              className="h-10 md:h-12 object-contain grayscale brightness-0 opacity-40 hover:opacity-100 transition-opacity duration-300"
+            />
+          ))}
         </motion.div>
       </div>
 
